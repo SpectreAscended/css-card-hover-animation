@@ -19,6 +19,7 @@ body {
   line-height: 1.6;
   background: var(--clr-neutral-900);
   font-family: sans-serif;
+  position: relative;
 }
 
 .card {
@@ -76,6 +77,22 @@ body {
 
 .card-body {
   color: rgb(255 255 255 / 0.8);
+}
+
+.play-audio {
+  position: absolute;
+  top: 2rem;
+  right: 5rem;
+  background-color: var(--clr-accent-400);
+  /* color: var(--clr-neutral-100); */
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.play-audio:hover,
+.play-audio:focus {
+  background-color: var(--clr-neutral-100);
 }
 
 @media (hover) {
