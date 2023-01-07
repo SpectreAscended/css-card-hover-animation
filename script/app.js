@@ -11,7 +11,6 @@ const audioHandler = function () {
       audioBtn.innerText = 'Pause Audio';
     } else {
       meinPorsche.pause();
-
       audioBtn.innerText = 'Play Audio';
     }
     clicked = !clicked;
