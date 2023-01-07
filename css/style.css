@@ -1,0 +1,36 @@
+:root {
+  --clr-neutral-900: hsl(207, 19%, 9%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-accent-400: hsl(142, 90%, 61%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  line-height: 1.6;
+  background: var(--clr-neutral-900);
+  font-family: sans-serif;
+}
+
+.card {
+  color: var(--clr-neutral-100);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+    url('../assets/card-bg-01.jpg');
+
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+}
+
+.card-content {
+  padding: 1.5em;
+  background-image: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% /1));
+  /* Watch the video https://www.youtube.com/watch?v=5DEq5cWNYt8&t=404s for more info on steps with linear gradients*/
+}
