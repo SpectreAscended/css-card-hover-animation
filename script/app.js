@@ -15,7 +15,6 @@ const audioHandler = function () {
       audioBtn.innerText = 'Play Audio';
     }
     clicked = !clicked;
-    console.log(clicked);
   });
 };
 
