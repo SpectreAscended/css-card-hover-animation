@@ -1,7 +1,9 @@
 :root {
   --clr-neutral-900: hsl(207, 19%, 9%);
   --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-accent-400: hsl(142, 90%, 61%);
+  /* --clr-accent-400: hsl(142, 90%, 61%); */
+  --clr-accent-400: hsl(49, 100%, 50%);
+  --clr-accent-700: hsl(0, 100%, 43%);
 }
 
 *,
@@ -46,34 +48,6 @@ body {
     hsl(0 0% 0% /1)
   );
   /* Watch the video https://www.youtube.com/watch?v=5DEq5cWNYt8&t=404s for more info on steps with linear gradients*/
-
-  transform: translateY(65%);
-  transition: transform 500ms ease;
-}
-
-.card:focus-within .card-content {
-  transition-duration: 0ms;
-}
-
-.card:hover .card-content,
-.card:focus-within .card-content {
-  transform: translateY(0);
-  transition-delay: 500ms;
-}
-
-.card-content > *:not(.card-title) {
-  opacity: 0;
-  transition: opacity 500ms linear;
-}
-
-.card:hover .card-content > *:not(.card-title),
-.card:focus-within .card-content > *:not(.card-title) {
-  opacity: 1;
-  transition-delay: 1000ms;
-}
-
-.card:focus-within .card-content > *:not(.card-title) {
-  transition-delay: 200ms;
 }
 
 .card-title {
@@ -90,7 +64,7 @@ body {
   left: calc(var(--padding) * -1);
   width: calc(100% + var(--padding));
   background-color: var(--clr-accent-400);
-  transform: scaleX(0);
+  /* background-color: var(--clr-accent-700); */
   transition: transform 500ms ease;
   transform-origin: left;
 }
@@ -104,6 +78,42 @@ body {
   color: rgb(255 255 255 / 0.8);
 }
 
+@media (hover) {
+  .card-content {
+    transform: translateY(65%);
+    transition: transform 500ms ease;
+  }
+
+  .card:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+
+  .card:hover .card-content,
+  .card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+  }
+
+  .card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+
+  .card:hover .card-content > *:not(.card-title),
+  .card:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 1000ms;
+  }
+
+  .card-title::after {
+    transform: scaleX(0);
+  }
+}
+
+.card:focus-within .card-content > *:not(.card-title) {
+  transition-delay: 200ms;
+}
+
 .button {
   cursor: pointer;
   display: inline-block;
@@ -111,9 +121,29 @@ body {
   color: var(--clr-neutral-900);
   background-color: var(--clr-accent-400);
   padding: 0.5em 1.25em;
+  border-radius: 0.25rem;
+  transition: all 200ms ease;
 }
 
 .button:hover,
 .button:focus {
+  background-color: var(--clr-accent-700);
+  color: var(--clr-neutral-100);
+}
+
+/* .button:hover,
+.button:focus {
   background-color: var(--clr-neutral-100);
+} */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+  }
 }
